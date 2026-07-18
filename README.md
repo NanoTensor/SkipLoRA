@@ -1,6 +1,6 @@
 # GlaiveLoRA: Contextual Gradient Zeroing for Accelerated LoRA Fine-Tuning
 
-Welcome to the official GitHub repository for **SkipLoRA**, a novel parameter-efficient fine-tuning method that accelerates the backward pass by dynamically skipping redundant gradient computations. Built on PyTorch, SkipLoRA introduces **Contextual Gradient Zeroing (CGZ)** to reduce FLOPs during training without sacrificing model quality. This repo provides a minimal, standalone implementation compatible with Hugging Face Transformers.
+Welcome to the official GitHub repository for **GlaiveLoRA**, a novel parameter-efficient fine-tuning method that accelerates the backward pass by dynamically skipping redundant gradient computations. Built on PyTorch, GlaiveLoRA introduces **Contextual Gradient Zeroing (CGZ)** to reduce FLOPs during training without sacrificing model quality. This repo provides a minimal, standalone implementation compatible with Hugging Face Transformers.
 
 Inspired by efficient LoRA variants like QLoRA, but focused on compute savings rather than memory quantization. Ideal for resource-constrained environments where backward pass dominates training time.
 
@@ -8,8 +8,8 @@ Inspired by efficient LoRA variants like QLoRA, but focused on compute savings r
 
 1. Clone the repo:
    ```
-   git clone https://github.com/NanoTensor/skiplora.git
-   cd skiptora
+   git clone https://github.com/NanoTensor/glaivelora.git
+   cd glaivelora
    ```
 
 2. Install dependencies:
@@ -30,7 +30,7 @@ Inspired by efficient LoRA variants like QLoRA, but focused on compute savings r
 - **Tested on**: PyTorch 2.1+, Transformers 4.35+.
 
 ## Methodology
-SkipLoRA operates in two phases:
+GlaiveLoRA operates in two phases:
 
 1. **Forward Pass**: For each LoRA-adapted layer, compute \(\mathcal{M}_l = \frac{||\Delta h||_2}{||h||_2}\), where \(\Delta h\) is the adapter delta.
 2. **Backward Pass**: If \(\mathcal{M}_l < \tau_l\), detach outputs and zero gradients for \(\mathbf{A}, \mathbf{B}\).
@@ -45,13 +45,14 @@ See `experiments/` (coming soon) for benchmarks.
 
 ## Citation
 ```
-@misc{skiplora2025,
-  title={SkipLoRA: Accelerating PEFT via Contextual Gradient Zeroing},
+@misc{Glaivelora2025,
+  title={GlaiveLoRA: Accelerating PEFT via Contextual Gradient Zeroing},
   author={Iheb Gafsi, Alex Kuchynka},
   year={2025},
-  url={https://github.com/NanoTensor/skiplora}
+  url={https://github.com/NanoTensor/Glaivelora}
 }
 ```
+Preprint coming soon.
 
 ## License
 MIT. See LICENSE for details.
@@ -65,9 +66,9 @@ MIT. See LICENSE for details.
 ├── LICENSE                   # MIT License
 ├── setup.py                  # Package installation
 ├── requirements.txt          # Dependencies
-├── skiptora/                 # Core library
+├── glaivelora/                 # Core library
 │   ├── __init__.py
-│   ├── layer.py              # SkipLoRA module definition
+│   ├── layer.py              # GlaiveLoRA module definition
 │   └── hooks.py              # Forward/backward hooks
 ├── examples/                 # Usage scripts
 │   └── train.py              # Fine-tuning example
