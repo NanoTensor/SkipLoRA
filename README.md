@@ -76,4 +76,4 @@ MIT. See LICENSE for details.
 ```
 
 ## Authorship note:
-Authored by Iheb Gafsi during tenure at NanoTensor. Forked to personal account for open-source maintenance.
+Authored by Alexandr Kuchynka, Iheb Gafsi, Malek Jouini, and Nina Zhang during tenure at NanoTensor. Forked to personal account for open-source maintenance.
