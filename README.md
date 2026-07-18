@@ -1,4 +1,4 @@
-# SkipLoRA: Contextual Gradient Zeroing for Accelerated LoRA Fine-Tuning
+# GlaiveLoRA: Contextual Gradient Zeroing for Accelerated LoRA Fine-Tuning
 
 Welcome to the official GitHub repository for **SkipLoRA**, a novel parameter-efficient fine-tuning method that accelerates the backward pass by dynamically skipping redundant gradient computations. Built on PyTorch, SkipLoRA introduces **Contextual Gradient Zeroing (CGZ)** to reduce FLOPs during training without sacrificing model quality. This repo provides a minimal, standalone implementation compatible with Hugging Face Transformers.
 
